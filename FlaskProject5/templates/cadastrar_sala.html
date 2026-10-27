@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Sala</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body background="/static/cinemafundo.png">
+
+    <h1>Cadastro de Sala de Cinema</h1>
+
+    <nav>
+        <a href="/">
+            <button>Página Inicial</button>
+        </a>
+
+        <a href="/cadastrar_sala">
+            <button>Cadastro de Sala</button>
+        </a>
+
+        <a href="/cadastrar_filmes">
+            <button>Cadastro de Filmes</button>
+        </a>
+
+        <a href="/exibir_salas">
+            <button>Exibir Salas</button>
+        </a>
+
+        <a href="/exibir_filmes">
+            <button>Exibir Filmes</button>
+        </a>
+    </nav>
+
+    <br><br>
+
+    <form action="/criar_sala" method="post">
+
+        <fieldset>
+
+            <legend>Cadastro de Sala</legend>
+
+            <label for="nome">Nome da sala:</label>
+            <input type="text" name="nome" id="nome" required>
+
+            <br><br>
+
+            <label for="tipo">Tipo da sala:</label>
+            <input type="text" name="tipo" id="tipo" required>
+
+            <br><br>
+
+            <label for="capacidade">Capacidade:</label>
+            <input type="number" name="capacidade" id="capacidade" required>
+
+            <br><br>
+
+            <label for="preco_ingresso">Preço do ingresso:</label>
+            <input type="number" name="preco_ingresso" id="preco_ingresso" step="0.01" required>
+
+            <br><br>
+
+            <button type="submit">Cadastrar Sala</button>
+
+        </fieldset>
+
+    </form>
+
+</body>
+
+</html>

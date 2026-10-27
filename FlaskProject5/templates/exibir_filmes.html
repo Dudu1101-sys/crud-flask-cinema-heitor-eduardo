@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exibir Filmes</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body background="/static/cinemafundo.png">
+
+    <h1>Exibir Filmes Cadastrados</h1>
+
+
+<nav>
+    <a href="/">
+        <button>Página Inicial</button>
+    </a>
+
+    <a href="/cadastrar_sala">
+        <button>Cadastro de Sala</button>
+    </a>
+
+    <a href="/cadastrar_filmes">
+        <button>Cadastro de Filmes</button>
+    </a>
+
+    <a href="/exibir_salas">
+        <button>Exibir Salas</button>
+    </a>
+
+    <a href="/exibir_filmes">
+        <button>Exibir Filmes</button>
+    </a>
+</nav>
+
+    <br>
+
+    <h2>Filmes Cadastrados</h2>
+
+    <p>
+        Nesta página serão exibidos os filmes cadastrados no sistema.
+    </p>
+
+    {% for filme in lista %}
+
+        <h2>{{ filme[1] }}</h2>
+
+        <p><strong>ID:</strong> {{ filme[0] }}</p>
+
+        <p><strong>Título:</strong> {{ filme[1] }}</p>
+
+        <p><strong>Diretor:</strong> {{ filme[2] }}</p>
+
+        <p><strong>Ano de lançamento:</strong> {{ filme[3] }}</p>
+
+        <p><strong>Gênero:</strong> {{ filme[4] }}</p>
+
+        <p><strong>Duração:</strong> {{ filme[5] }} minutos</p>
+
+
+    <a href="/excluir_filme/{{ filme[0] }}">
+        <button>Excluir Filme</button>
+    </a>
+
+    <a href="/editar_filme/{{ filme[0] }}">
+        <button>Editar Filme</button>
+    </a>
+
+        <hr>
+
+    {% endfor %}
+
+</body>
+
+</html>

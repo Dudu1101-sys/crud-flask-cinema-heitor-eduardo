@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exibir Salas</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body background="/static/cinemafundo.png">
+
+    <h1>Salas de Cinema</h1>
+
+    <nav>
+        <a href="/">
+            <button>Página Inicial</button>
+        </a>
+
+        <a href="/cadastrar_sala">
+            <button>Cadastro de Sala</button>
+        </a>
+
+        <a href="/cadastrar_filmes">
+            <button>Cadastro de Filmes</button>
+        </a>
+
+        <a href="/exibir_salas">
+            <button>Exibir Salas</button>
+        </a>
+
+        <a href="/exibir_filmes">
+            <button>Exibir Filmes</button>
+        </a>
+    </nav>
+
+    <br>
+
+    <h2>Salas Cadastradas</h2>
+
+    <p>
+        Nesta página serão exibidas as salas de cinema cadastradas no sistema.
+    </p>
+
+    {% for sala in lista %}
+
+        <h2>{{ sala[0] }}</h2>
+
+        <p>
+            <strong>Nome:</strong> {{ sala[1] }}
+        </p>
+
+        <p>
+            <strong>Tipo:</strong> {{ sala[2] }}
+        </p>
+
+        <p>
+            <strong>Capacidade:</strong> {{ sala[3] }}
+        </p>
+
+        <p>
+            <strong>Preço do ingresso:</strong> R$ {{ sala[4] }}
+        </p>
+
+        <a href="/editar_sala/{{ sala[0] }}">
+             <button>Editar Sala</button>
+        </a>
+
+        <a href="/excluir_sala/{{ sala[0] }}">
+            <button>Excluir Sala</button>
+        </a>
+
+        <hr>
+
+    {% endfor %}
+
+</body>
+
+</html>

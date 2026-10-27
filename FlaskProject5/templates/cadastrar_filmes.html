@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Filmes</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body background="/static/cinemafundo.png">
+
+    <h1>Cadastro de Filmes</h1>
+
+    <nav>
+        <a href="/">
+            <button>Página Inicial</button>
+        </a>
+
+        <a href="/cadastrar_sala">
+            <button>Cadastro de Sala</button>
+        </a>
+
+        <a href="/cadastrar_filmes">
+            <button>Cadastro de Filmes</button>
+        </a>
+
+        <a href="/exibir_salas">
+            <button>Exibir Salas</button>
+        </a>
+
+        <a href="/exibir_filmes">
+            <button>Exibir Filmes</button>
+        </a>
+    </nav>
+
+    <br><br>
+
+    <form action="/criar_filmes" method="post">
+
+        <fieldset>
+
+            <legend>Cadastro de Filme</legend>
+
+            <label for="titulo">Título do filme:</label>
+            <input type="text" name="titulo" id="titulo" required>
+
+            <br><br>
+
+            <label for="genero">Gênero:</label>
+            <input type="text" name="genero" id="genero" required>
+
+            <br><br>
+
+            <label for="duracao_min">Duração (minutos):</label>
+            <input type="number" name="duracao_min" id="duracao_min" required>
+
+            <br><br>
+
+            <label for="data_lancamento">Data de lançamento:</label>
+            <input type="date" name="data_lancamento" id="data_lancamento" required>
+
+            <br><br>
+
+            <button type="submit">Cadastrar Filme</button>
+
+        </fieldset>
+
+    </form>
+
+</body>
+
+</html>
